@@ -1,0 +1,56 @@
+.formu{
+background-color: black;
+width: 100%;
+justify-content: center;
+color: silver;
+margin-top: 20px;
+padding-top: 5%;
+padding-bottom: 5%;
+}
+
+.formulario{
+  justify-content: center;
+  width: 30%;
+  margin: auto;
+}
+
+#iniciarS{
+  margin-left: 35%;
+  margin-right: auto;
+  justify-content: center;
+  background: linear-gradient(to right, #f09819, #edde5d);
+  border-radius: 35px;
+  border: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 10px;
+}
+
+#iniciarS:hover{
+  background: linear-gradient(to right, #ff512f, #f09819);
+}
+
+#inicia{
+  font-family: 'Girassol', cursive;
+  font-size: xx-large;
+  margin-left: 43%;
+  font-weight: bold;
+  color: goldenrod;
+}
+
+#registrar{
+  font-family: 'Aclonica', sans-serif;
+  font-size: larger;
+  margin-left: 37%;
+}
+
+a{
+  text-decoration: none;
+
+  color: silver;
+  font-weight: bold;
+}
+a:hover{
+  color:goldenrod;
+}

@@ -1,0 +1,22 @@
+<div class="formu">
+  <p id="inicia">REGISTRATE</p>
+  <div class="formulario">
+    <form [formGroup]="form" (ngSubmit)="enviar(form.value)">
+      <label for="nombre"><i class="fas fa-user" style="font-size:24px;color:goldenrod"></i> Ingrese su nombre</label>
+      <input type="text" placeholder="Carlos" style="width:100% ; height: 50px; font-size: larger;" formControlName="nombre" required>
+      <br><br>
+      <label for="apellido"><i class="fas fa-user-tie" style="font-size:24px;color:goldenrod"></i> Ingrese su apellido</label>
+      <input type="text" placeholder="Garcia" style="width:100% ; height: 50px; font-size: larger;" formControlName="apellido" required>
+      <br><br>
+      <label for="email"><i class="fas fa-envelope" style="font-size:24px;color:goldenrod"></i> Ingrese su e-mail</label>
+      <input type="text" placeholder="nombre@ejemplo.com" style="width:100% ; height: 50px; font-size: larger;" formControlName="email" required>
+      <br><br>
+      <label for="password"><i class="fas fa-lock" style="font-size:24px;color:goldenrod"></i> Ingrese una contraseña</label>
+      <input type="password" placeholder="***************" style="width:100% ; height: 50px; font-size: larger;" formControlName="password" required>
+      <br><br><br>
+      <input type="submit" id="iniciarS" value="Registrarse" [disabled]="!form.valid">
+    </form>
+  </div>
+  <br><br>
+  <p id="registrar">¿Ya tenes una cuenta? <a href="login">Inicia sesion</a></p>
+</div>
