@@ -11,6 +11,7 @@ import { Persona } from '../model/persona';
 export class RegistroComponent implements OnInit {
 
   form:FormGroup;
+  personas:Persona[];
 
   constructor(private service:PersonaService, private fb:FormBuilder) { }
 
@@ -21,11 +22,16 @@ export class RegistroComponent implements OnInit {
       email:['', [Validators.required, Validators.email]],
       password:['', Validators.required]
     })
+
+    this.service.getAll().subscribe((personas: Persona[])=>{
+      this.personas=personas;
+    })
   }
 
   enviar(persona:Persona){
     this.service.save(persona).subscribe(()=>{
       console.log("Enviando los datos");
+      this.personas.push(persona);
     })
   }
 

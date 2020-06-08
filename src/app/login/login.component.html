@@ -1,14 +1,14 @@
 <div class="formu">
   <p id="inicia">INICIAR SESION</p>
   <div class="formulario">
-    <form action="resultado.html" method="post">
+    <form [formGroup]="form" (ngSubmit)="consultar(form.value)">
       <label for="email"><i class="fas fa-user" style="font-size:24px;color:goldenrod"></i> Ingrese su e-mail</label>
-      <input type="text" placeholder="nombre@ejemplo.com" style="width:100% ; height: 50px; font-size: larger;" name="email" id="email" required>
+      <input type="text" placeholder="nombre@ejemplo.com" style="width:100% ; height: 50px; font-size: larger;" formControlName="email" id="email" required>
       <br><br>
       <label for="contra"><i class="fas fa-lock" style="font-size:24px;color:goldenrod"></i> Ingrese su contraseña</label>
-      <input type="password" placeholder="***************" style="width:100% ; height: 50px; font-size: larger;" name="contra" id="contra" required>
+      <input type="password" placeholder="***************" style="width:100% ; height: 50px; font-size: larger;" formControlName="password" id="contra" required>
       <br><br><br>
-      <button id="iniciarS" type="submit">Iniciar Sesion</button>
+      <input type="submit" id="iniciarS" value="Iniciar Sesion">
     </form>
   </div>
   <br><br>
