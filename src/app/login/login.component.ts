@@ -12,7 +12,7 @@ import { Persona } from '../model/persona';
 export class LoginComponent implements OnInit {
 
   form:FormGroup;
-  usuarioLog:Usuario;
+  personaLog:Persona;
 
   constructor(private service:PersonaService, private fb:FormBuilder) { }
 
@@ -23,9 +23,9 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  consultar(persona:Persona){
-    this.service.findByEmailAndPassword(persona).subscribe(()=>{
-     // this.usuarioLog=usuario;
+  consultar(usuario:Usuario){
+    this.service.findByEmailAndPassword(usuario).subscribe((persona)=>{
+     this.personaLog=persona;
       console.log("Enviando los datos");
     })
   }

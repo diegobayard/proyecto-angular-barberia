@@ -10,7 +10,7 @@ import { Usuario } from './model/usuario';
 export class PersonaService {
 
   url = 'http://localhost:8080/personas';
-  url2 = 'http://localhost:8080/personas/consulta';
+  url2 = 'http://localhost:8080/personas/autenticacion';
   constructor(private http: HttpClient) { }
 
   save(persona:Persona): Observable<Persona>{
@@ -21,7 +21,8 @@ export class PersonaService {
     return this.http.get<Persona[]>(this.url);
   }
 
-  findByEmailAndPassword(persona:Persona): Observable<Persona>{
-    return this.http.post<Persona>(this.url2, persona);
+  findByEmailAndPassword(usuario:Usuario): Observable<Persona>{
+    return this.http.post<Persona>(this.url2, usuario);
   }
 }
+//https://bezkoder.com/angular-spring-boot-jwt-auth/
