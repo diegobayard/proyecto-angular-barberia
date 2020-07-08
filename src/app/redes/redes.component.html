@@ -4,5 +4,46 @@
   <div class="redes"><a href="https://twitter.com/barberviking?lang=es"><i class="fab fa-twitter" style="font-size:24px;color:white"></i></a></div>
   <div class="redes"><a href="https://www.youtube.com/channel/UCFzVSyaVnj1PTf3PD1wiWAA"><i class="fab fa-youtube" style="font-size:24px;color:white"></i></a></div>
   <div class="redes"><a href="https://wa.me/5493412848850?text=Hola,%20necesito%20hacer%20una%20consulta%20Vikings%20Barber%20Shop"><i class="fab fa-whatsapp" style="font-size:24px;color:white"></i></a></div>
+  <!--<a id="inicia" routerLink="login">Iniciar Sesion</a>-->
+  <div id="inicia" routerLinkActive="active"><span *ngIf="showAdminBoard"><a id="inicia" routerLink="admin">Admin Board</a></span></div>
+  <div id="inicia" *ngIf="!isLoggedIn"><span><a id="inicia" routerLink="registro">Registrarse</a></span><span><a id="inicia" routerLink="login">Iniciar Sesion</a></span></div>
+  <div id="inicia" *ngIf="isLoggedIn"><span><a id="inicia" routerLink="profile">{{ username }}</a></span><span><a id="inicia" href (click)="logout()">Cerrar Sesion</a></span></div>
+</div>
+<!--
+  <div id="contenedor_redes">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+      </li>
+      <li class="nav-item">
+        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register">Registrarse</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Iniciar Sesion</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="redes"><a href="https://es-la.facebook.com/vikingosbarber"><i class="fab fa-facebook" style="font-size:24px;color:white"></i></a></div>
+  <div class="redes"><a href="https://www.instagram.com/viking.barber.shop/?hl=es"><i class="fab fa-instagram" style="font-size:24px;color:white"></i></a></div>
+  <div class="redes"><a href="https://twitter.com/barberviking?lang=es"><i class="fab fa-twitter" style="font-size:24px;color:white"></i></a></div>
+  <div class="redes"><a href="https://www.youtube.com/channel/UCFzVSyaVnj1PTf3PD1wiWAA"><i class="fab fa-youtube" style="font-size:24px;color:white"></i></a></div>
+  <div class="redes"><a href="https://wa.me/5493412848850?text=Hola,%20necesito%20hacer%20una%20consulta%20Vikings%20Barber%20Shop"><i class="fab fa-whatsapp" style="font-size:24px;color:white"></i></a></div>
   <a id="inicia" routerLink="login">Iniciar Sesion</a>
 </div>
+
+-->

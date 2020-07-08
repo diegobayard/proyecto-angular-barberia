@@ -8,7 +8,7 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { ProductosComponent } from './productos/productos.component';
 import { RedesComponent } from './redes/redes.component';
 import { TituloComponent } from './titulo/titulo.component';
-
+import { ProfileComponent } from './profile/profile.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SliderComponent } from './slider/slider.component';
 import { HomeComponent } from './home/home.component';
@@ -16,8 +16,12 @@ import { SliderProductosComponent } from './slider-productos/slider-productos.co
 import { LoginComponent } from './login/login.component';
 import { PieReservaComponent } from './pie-reserva/pie-reserva.component';
 import { RegistroComponent } from './registro/registro.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { authInterceptorProviders } from './auth.interceptor';
+
 
 const rutas:Routes = [
 
@@ -50,6 +54,22 @@ const rutas:Routes = [
     component:RegistroComponent
   },
   {
+    path:'registro',
+    component:RegistroComponent
+  },
+  {
+    path:'board-admin',
+    component:BoardAdminComponent
+  },
+  {
+    path:'board-user',
+    component:BoardUserComponent
+  },
+  {
+    path:'profile',
+    component:ProfileComponent
+  },
+  {
     path:'',
     redirectTo:'/home', pathMatch: 'full'
   }
@@ -70,15 +90,20 @@ const rutas:Routes = [
     SliderProductosComponent,
     LoginComponent,
     PieReservaComponent,
-    RegistroComponent
+    RegistroComponent,
+    BoardAdminComponent,
+    BoardUserComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(rutas),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  exports: [RouterModule],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
