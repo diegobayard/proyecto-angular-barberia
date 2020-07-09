@@ -10,6 +10,7 @@ export class ServiciosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.abrirTabla(null,'Combos');
   }
 
       abrirTabla(evt:any, servNombres:string) {

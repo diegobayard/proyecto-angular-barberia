@@ -7,7 +7,7 @@
   <!--<a id="inicia" routerLink="login">Iniciar Sesion</a>-->
   <div id="inicia" routerLinkActive="active"><span *ngIf="showAdminBoard"><a id="inicia" routerLink="admin">Admin Board</a></span></div>
   <div id="inicia" *ngIf="!isLoggedIn"><span><a id="inicia" routerLink="registro">Registrarse</a></span><span><a id="inicia" routerLink="login">Iniciar Sesion</a></span></div>
-  <div id="inicia" *ngIf="isLoggedIn"><span><a id="inicia" routerLink="profile">{{ username }}</a></span><span><a id="inicia" href (click)="logout()">Cerrar Sesion</a></span></div>
+  <div id="inicia" *ngIf="isLoggedIn"><span><a id="inicia" routerLink="profile">{{ username }}</a></span><span><a id="inicia" href (click)="logout()">(salir)</a></span></div>
 </div>
 <!--
   <div id="contenedor_redes">

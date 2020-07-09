@@ -11,6 +11,7 @@ import { Contacto } from '../model/contacto';
 export class ContactoComponent implements OnInit {
 
   form:FormGroup;
+  activado = false;
 
   constructor(private service:ContactoService, private fb:FormBuilder) { }
 
@@ -18,15 +19,17 @@ export class ContactoComponent implements OnInit {
     this.form=this.fb.group({
       nombre:['', Validators.required],
       apellido: '',
-      email:['', [Validators.required, Validators.email]],
+      email:['', Validators.email],
       telefono:['', Validators.required],
       comentario:['', Validators.required]
     })
+    this.activado=false;
   }
 
   enviar(contacto:Contacto){
     this.service.save(contacto).subscribe(()=>{
       console.log("Enviando los datos");
+      this.activado=true;
     })
   }
 }

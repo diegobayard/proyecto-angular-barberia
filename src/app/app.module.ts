@@ -21,6 +21,7 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { authInterceptorProviders } from './auth.interceptor';
+import { TurnosComponent } from './turnos/turnos.component';
 
 
 const rutas:Routes = [
@@ -70,6 +71,14 @@ const rutas:Routes = [
     component:ProfileComponent
   },
   {
+    path:'turnos',
+    component:TurnosComponent
+  },
+  {
+    path:'./turnos',
+    component:TurnosComponent
+  },
+  {
     path:'',
     redirectTo:'/home', pathMatch: 'full'
   }
@@ -93,7 +102,8 @@ const rutas:Routes = [
     RegistroComponent,
     BoardAdminComponent,
     BoardUserComponent,
-    ProfileComponent
+    ProfileComponent,
+    TurnosComponent
   ],
   imports: [
     BrowserModule,

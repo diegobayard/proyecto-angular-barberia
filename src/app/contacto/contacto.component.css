@@ -5,6 +5,7 @@ h2{
   text-align: center;
   padding: 10px;
   background-color: black;
+  margin-top: 20px;
 }
 
 .contenedor{
@@ -13,12 +14,13 @@ h2{
   margin: auto;
   height: 100%;
   background-color: black;
+  margin-top: 20px;
 }
 
 .info{
   background-color: black;
   color: silver;
-  /*width: 45%;*/
+  width: 50%;
   float: right;
   padding: 20px;
   font-family: 'Times New Roman', Times, serif;
@@ -27,16 +29,17 @@ h2{
 }
 
 .formu{
-  /*width: 45%;*/
+  width: 50%;
   background-color: black;
   float: left;
   color: silver;
   padding-right: 40px;
   padding-left: 40px;
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 53px;
   font-size: 20px;
   text-align: center;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 #borrar{
@@ -67,4 +70,9 @@ h2{
 
 #enviar:hover{
   background: linear-gradient(to right, #fe8c00, #f83600);
+}
+
+p{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
 }

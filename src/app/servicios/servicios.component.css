@@ -5,12 +5,12 @@
 
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  border: 5px solid black;
+  background: linear-gradient(336deg, #000000, #1f1f1e, #000000);
 }
 
 .tab button {
-  background-color: #f1f1f1;
+  background: linear-gradient(336deg, #000000, #1f1f1e, #000000);
   float: left;
   border: none;
   outline: none;
@@ -21,20 +21,23 @@
   font-family: 'Aclonica', sans-serif;
   margin-right: 11%;
   margin-left: 11%;
+  color: silver;
 }
 
 .tab button:hover {
-  background: linear-gradient(to right, #0575e6, #021b79);
+  background: linear-gradient(to right, #f79814, #f0df4a);
+  color: black;
 }
 
 .tab button.active {
-  background: linear-gradient(to right, #00c6ff, #0072ff);
+  background: linear-gradient(to right, #f09819, #edde5d);
+  color: black;
 }
 
 .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid black;
   border-top: none;
   color: silver;
 }
@@ -56,4 +59,18 @@ p{
 h3{
   padding-left: 10%;
   font-size: x-large;
+}
+.list-group-item-dark{
+  background: linear-gradient(336deg, #000000, #1f1f1e, #000000) !important;
+}
+
+li{
+  color: silver;
+  font-weight: bold;
+}
+
+.badge-warning{
+  font-weight: bold !important;
+  color: black;
+  font-size: large;
 }
