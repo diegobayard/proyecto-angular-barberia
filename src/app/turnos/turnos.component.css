@@ -1,0 +1,22 @@
+#logueate{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.jumbotron{
+  margin-top: 20px;
+}
+
+h1{
+  text-align: center;
+}
+
+#negrita{
+  font-weight: bold;
+}
+
+.container{
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}

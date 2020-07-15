@@ -1,1 +1,100 @@
-<p>turnos works!</p>
+<div class="jumbotron jumbotron-fluid" *ngIf="currentUser; else loggedOut">
+  <div class="container">
+    <h1 class="display-4"><strong>Reservá tu turno!</strong></h1>
+    <form [formGroup]="form" (ngSubmit)="enviar(form.value)">
+      <br>
+      <div class="form-group">
+        <span id="negrita">Usuario: </span>
+        <span>{{nombreUsuario}}</span>
+      </div>
+      <div class="form-group">
+        <span id="negrita">Email: </span>
+        <span>{{emailUsuario}}</span>
+      </div>
+      <span id="negrita">Barbero: </span>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" formControlName="barbero" id="barbero1" value="Miguel">
+        <label class="form-check-label" for="barbero1">
+          Miguel
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" formControlName="barbero" id="barbero2" value="Alfredo">
+        <label class="form-check-label" for="barbero2">
+          Alfredo
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" formControlName="barbero" id="barbero3" value="Ignacio" >
+        <label class="form-check-label" for="barbero3">
+          Ignacio
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" formControlName="barbero" id="barbero4" value="Sin preferencia" >
+        <label class="form-check-label" for="barbero4">
+          Sin preferencia
+        </label>
+      </div>
+      <br>
+      <p id="negrita">Fecha de turno:</p>
+      <div class="form-group">
+        <label for="inputDia" id="negrita">Día</label>
+        <input type="number" formControlName="dia" class="form-control" id="inputDia" required>
+      </div>
+      <div class="form-group">
+        <label id="negrita" for="exampleFormControlSelect1">Mes</label>
+        <select formControlName="mes" class="form-control" id="exampleFormControlSelect1">
+          <option selected>---</option>
+          <option value=1>Enero</option>
+          <option value=2>Febrero</option>
+          <option value=3>Marzo</option>
+          <option value=4>Abril</option>
+          <option value=5>Mayo</option>
+          <option value=6>Junio</option>
+          <option value=7>Julio</option>
+          <option value=8>Agosto</option>
+          <option value=9>Septiembre</option>
+          <option value=10>Octubre</option>
+          <option value=11>Noviembre</option>
+          <option value=12>Diciembre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label id="negrita" for="hora">Hora</label>
+        <select formControlName="hora" class="form-control" id="hora">
+          <option selected>---</option>
+          <option value="9">09.00 AM</option>
+          <option value="10">10.00 AM</option>
+          <option value="11">11.00 AM</option>
+          <option value="12">12.00 PM</option>
+          <option value="13">13.00 PM</option>
+          <option value="14">14.00 PM</option>
+          <option value="15">15.00 PM</option>
+          <option value="16">16.00 PM</option>
+          <option value="17">17.00 PM</option>
+          <option value="18">18.00 PM</option>
+          <option value="19">19.00 PM</option>
+          <option value="20">20.00 PM</option>
+        </select>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.valid">Reserva!</button>
+        </div>
+      </div>
+    </form>
+    <div *ngIf="!valido && botonApretado" class="alert alert-danger" role="alert">
+      Ingresa una fecha valida!
+    </div>
+    <div *ngIf="valido && botonApretado" class="alert alert-success" role="alert">
+      Turno solicitado con exito!
+    </div>
+  </div>
+</div>
+
+<ng-template #loggedOut>
+  <div class="alert alert-primary" role="alert" id="logueate">
+    Para poder acceder a un turno, por favor, <a href="/login" class="alert-link">INICIA SESIÓN</a> o <a href="/registro" class="alert-link">REGISTRATE</a> en caso de no tener cuenta.
+  </div>
+</ng-template>

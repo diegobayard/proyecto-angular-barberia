@@ -59,7 +59,7 @@ const rutas:Routes = [
     component:RegistroComponent
   },
   {
-    path:'board-admin',
+    path:'admin',
     component:BoardAdminComponent
   },
   {

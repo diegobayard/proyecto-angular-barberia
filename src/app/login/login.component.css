@@ -123,6 +123,11 @@ p{
   color:silver;
 }
 
+#centrado{
+  font-weight: bold;
+  text-align: center;
+}
+
 .boton-block{
   background: linear-gradient(to right, #f7971e, #ffd200);
   border-radius: 35px;

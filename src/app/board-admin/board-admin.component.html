@@ -1,5 +1,48 @@
-<div class="container">
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
+<div *ngIf="currentUser && esAdmin; else loggedOut">
+  <div class="grancontenedor">
+    <div class="tab">
+      <!--<button class="tablinks" (click)="abrirTabla($event, 'Usuarios')">Usuarios</button>-->
+      <button class="tablinks" (click)="abrirTabla($event, 'Turnos')">Turnos</button>
+      <button class="tablinks" (click)="abrirTabla($event, 'Mensajes')">Mensajes</button>
+    </div>
+
+    <!--
+    <div id="Usuarios" class="tabcontent">
+      <div *ngFor="let t of turnos" class="list-group-item d-flex justify-content-between list-group-item-dark">
+        <p>Usuario: {{ t.username }}</p>
+        <p>Email: {{ t.email }}</p>
+        <p>Fecha del turno: {{ t.dia }}/{{t.mes}} a las {{t.hora}} horas</p>
+        <p>Barbero: {{t.barbero}}</p>
+      </div>
+    </div>
+    -->
+
+    <div id="Turnos" class="tabcontent">
+      <div *ngFor="let t of turnos" class="tablita">
+        <p><span id="colorcito">Usuario: </span>{{ t.username }}</p>
+        <p><span id="colorcito">Email: </span>{{ t.email }}</p>
+        <p><span id="colorcito">Fecha del turno: </span>{{ t.dia }}/{{t.mes}} a las {{t.hora}} horas</p>
+        <p><span id="colorcito">Barbero: </span>{{t.barbero}}</p>
+      </div>
+    </div>
+
+    <div id="Mensajes" class="tabcontent">
+      <div *ngFor="let c of contactos" class="tablita">
+        <p><span id="colorcito">Nombre: </span>{{ c.nombre }}</p>
+        <p><span id="colorcito">Apellido: </span>{{ c.apellido }}</p>
+        <p><span id="colorcito">Email: </span>{{ c.email }}</p>
+        <p><span id="colorcito">Telefono: </span>{{c.telefono}}</p>
+        <p><span id="colorcito">Mensaje: </span>{{c.comentario}}</p>
+      </div>
+    </div>
+  </div>
 </div>
+
+<ng-template #loggedOut>
+  <div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading" id="denegado">Restringido!</h4>
+    <p id="denegado">No tiene los privilegios requeridos para acceder a esta sección de la página. Este segmento es de uso exclusivo para el personal responsable del mantenimiento de la misma</p>
+    <hr>
+    <p id="denegado" class="mb-0">Sección denegada para usuarios sin autorización</p>
+  </div>
+</ng-template>

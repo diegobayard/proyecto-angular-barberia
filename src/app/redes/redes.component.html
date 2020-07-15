@@ -5,9 +5,9 @@
   <div class="redes"><a href="https://www.youtube.com/channel/UCFzVSyaVnj1PTf3PD1wiWAA"><i class="fab fa-youtube" style="font-size:24px;color:white"></i></a></div>
   <div class="redes"><a href="https://wa.me/5493412848850?text=Hola,%20necesito%20hacer%20una%20consulta%20Vikings%20Barber%20Shop"><i class="fab fa-whatsapp" style="font-size:24px;color:white"></i></a></div>
   <!--<a id="inicia" routerLink="login">Iniciar Sesion</a>-->
-  <div id="inicia" routerLinkActive="active"><span *ngIf="showAdminBoard"><a id="inicia" routerLink="admin">Admin Board</a></span></div>
-  <div id="inicia" *ngIf="!isLoggedIn"><span><a id="inicia" routerLink="registro">Registrarse</a></span><span><a id="inicia" routerLink="login">Iniciar Sesion</a></span></div>
-  <div id="inicia" *ngIf="isLoggedIn"><span><a id="inicia" routerLink="profile">{{ username }}</a></span><span><a id="inicia" href (click)="logout()">(salir)</a></span></div>
+  <div id="inicia" routerLinkActive="active"><span *ngIf="showAdminBoard"><a id="inicias" routerLink="admin">Gestión</a></span></div>
+  <div id="inicia" *ngIf="!isLoggedIn"><span><a id="inicia" routerLink="registro">Registrarse</a></span><span><a id="inicias" routerLink="login">Iniciar Sesion</a></span></div>
+  <div id="inicia" *ngIf="isLoggedIn"><span><a id="inicia" routerLink="profile">{{ username }}</a></span><span><a id="inicias" href (click)="logout()">(salir)</a></span></div>
 </div>
 <!--
   <div id="contenedor_redes">

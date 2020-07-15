@@ -134,6 +134,11 @@ p{
   width: 100%;
 }
 
+#centrado{
+  text-align: center;
+  font-weight: bold;
+}
+
 /*
 .alerta-exito{
   color:green;
